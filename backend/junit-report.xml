@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="25" failures="0" errors="0" time="9.264">
+  <testsuite name="POST /register" errors="0" failures="0" skipped="0" timestamp="2024-11-24T04:02:23" time="2.785" tests="6">
+    <testcase classname="POST /register should register a new user successfully" name="POST /register should register a new user successfully" time="0.15">
+    </testcase>
+    <testcase classname="POST /register should return 400 if username already exists" name="POST /register should return 400 if username already exists" time="0.039">
+    </testcase>
+    <testcase classname="POST /login should log in a user successfully and set a cookie" name="POST /login should log in a user successfully and set a cookie" time="0.04">
+    </testcase>
+    <testcase classname="POST /login should return 401 for incorrect password" name="POST /login should return 401 for incorrect password" time="0.038">
+    </testcase>
+    <testcase classname="POST /login should return 401 for non-existent user" name="POST /login should return 401 for non-existent user" time="0.039">
+    </testcase>
+    <testcase classname="PUT /logout should log out a user successfully" name="PUT /logout should log out a user successfully" time="0.088">
+    </testcase>
+  </testsuite>
+  <testsuite name="GET /articles/:id?" errors="0" failures="0" skipped="0" timestamp="2024-11-24T04:02:23" time="3.577" tests="7">
+    <testcase classname="GET /articles/:id? should return all articles for the user and their following" name="GET /articles/:id? should return all articles for the user and their following" time="0.126">
+    </testcase>
+    <testcase classname="GET /articles/:id? should return a specific article by ID" name="GET /articles/:id? should return a specific article by ID" time="0.133">
+    </testcase>
+    <testcase classname="POST /article should create a new article" name="POST /article should create a new article" time="0.115">
+    </testcase>
+    <testcase classname="POST /article should return 400 if title or body is missing" name="POST /article should return 400 if title or body is missing" time="0.039">
+    </testcase>
+    <testcase classname="PUT /articles/:id should update an article" name="PUT /articles/:id should update an article" time="0.196">
+    </testcase>
+    <testcase classname="PUT /articles/:id/comments should add a comment to an article" name="PUT /articles/:id/comments should add a comment to an article" time="0.201">
+    </testcase>
+    <testcase classname="PUT /articles/:id/comments should return 400 if comment text is missing" name="PUT /articles/:id/comments should return 400 if comment text is missing" time="0.079">
+    </testcase>
+  </testsuite>
+  <testsuite name="Profile API Tests" errors="0" failures="0" skipped="0" timestamp="2024-11-24T04:02:23" time="7.133" tests="12">
+    <testcase classname="Profile API Tests GET /headline/:user? should return the headline for the logged-in user" name="Profile API Tests GET /headline/:user? should return the headline for the logged-in user" time="2.798">
+    </testcase>
+    <testcase classname="Profile API Tests GET /headline/:user? should return 404 for a non-existent user" name="Profile API Tests GET /headline/:user? should return 404 for a non-existent user" time="0.226">
+    </testcase>
+    <testcase classname="Profile API Tests PUT /headline should update the headline for the logged-in user" name="Profile API Tests PUT /headline should update the headline for the logged-in user" time="0.277">
+    </testcase>
+    <testcase classname="Profile API Tests PUT /headline should return 400 if headline is missing" name="Profile API Tests PUT /headline should return 400 if headline is missing" time="0.197">
+    </testcase>
+    <testcase classname="Profile API Tests GET /avatar/:user? should return the avatar for the logged-in user" name="Profile API Tests GET /avatar/:user? should return the avatar for the logged-in user" time="0.232">
+    </testcase>
+    <testcase classname="Profile API Tests GET /avatar/:user? should return 404 for a non-existent user" name="Profile API Tests GET /avatar/:user? should return 404 for a non-existent user" time="0.228">
+    </testcase>
+    <testcase classname="Profile API Tests PUT /avatar should update the avatar for the logged-in user" name="Profile API Tests PUT /avatar should update the avatar for the logged-in user" time="0.233">
+    </testcase>
+    <testcase classname="Profile API Tests PUT /avatar should return 400 if avatar is missing" name="Profile API Tests PUT /avatar should return 400 if avatar is missing" time="0.197">
+    </testcase>
+    <testcase classname="Profile API Tests PUT /email should update the email for the logged-in user" name="Profile API Tests PUT /email should update the email for the logged-in user" time="0.24">
+    </testcase>
+    <testcase classname="Profile API Tests PUT /email should return 400 if email is missing" name="Profile API Tests PUT /email should return 400 if email is missing" time="0.195">
+    </testcase>
+    <testcase classname="Profile API Tests PUT /phone should update the phone for the logged-in user" name="Profile API Tests PUT /phone should update the phone for the logged-in user" time="0.235">
+    </testcase>
+    <testcase classname="Profile API Tests PUT /zipcode should update the zipcode for the logged-in user" name="Profile API Tests PUT /zipcode should update the zipcode for the logged-in user" time="0.234">
+    </testcase>
+  </testsuite>
+</testsuites>
