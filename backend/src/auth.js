@@ -21,23 +21,27 @@ const BACKEND_URL  = process.env.BACKEND_URL  || 'http://localhost:3001';
  */
 const isLoggedIn = async (req, res, next) => {
   try {
-    if (req.isAuthenticated && req.isAuthenticated() && req.user) {
-      req.username = req.user.username;
-    } else if (req.session?.userId) {
+    // 优先使用本地会话（覆盖掉仍然存活的 Google 会话）
+    if (req.session?.userId) {
       const u = await User.findById(req.session.userId);
-      if (!u) return res.status(401).send({ error: 'Unauthorized' });
+      if (!u) return res.status(401).json({ error: 'Unauthorized' });
       req.username = u.username;
+    } else if (req.isAuthenticated?.() && req.user) {
+      // 其次才是 Passport（Google）
+      req.username = req.user.username;
     } else {
-      return res.status(401).send({ error: 'Unauthorized' });
+      return res.status(401).json({ error: 'Unauthorized' });
     }
+
     const p = await Profile.findOne({ username: req.username });
     req.avatar = p?.avatar || 'https://via.placeholder.com/50';
     next();
   } catch (e) {
     console.error('isLoggedIn error:', e);
-    res.status(500).send({ error: 'Internal Server Error' });
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
 
 // --------------- Passport (Google) ---------------
 passport.serializeUser((user, done) => done(null, user._id));
@@ -199,8 +203,14 @@ const login = async (req, res) => {
 
     const profile = await Profile.findOne({ username: loginName });
 
-    // 统一使用 express-session（MongoStore）保存登录态
-    req.session.userId = user._id;
+    // 如果之前是 Google 登录，先把 Passport 身份清掉
+    if (req.isAuthenticated?.()) {
+      await new Promise((resolve, reject) => req.logout(err => err ? reject(err) : resolve()));
+    }
+    // 重生一个全新的会话，避免把旧的 Passport 身份带过去
+    await new Promise((resolve, reject) => req.session.regenerate(err => err ? reject(err) : resolve()));
+    req.session.userId = user._id.toString();
+    await new Promise((resolve, reject) => req.session.save(err => err ? reject(err) : resolve()));
 
     return res.status(200).send({
       result: 'success',
@@ -220,6 +230,7 @@ const login = async (req, res) => {
   }
 };
 
+
 const logout = (req, res) => {
   // 同时处理 Passport 与本地会话
   req.logout?.(() => {
@@ -231,7 +242,7 @@ const logout = (req, res) => {
   });
 };
 
-// 绑定/解绑/合并：保留你的实现，但依赖 isLoggedIn（基于同一套 session）
+// 绑定/解绑/合并：但依赖 isLoggedIn（基于同一套 session）
 router.post('/link-account', isLoggedIn, async (req, res) => {
   const { provider, id } = req.body;
   if (!provider || !id) return res.status(400).send({ error: 'Invalid provider or id' });
