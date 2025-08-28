@@ -242,7 +242,7 @@ const logout = (req, res) => {
   });
 };
 
-// 绑定/解绑/合并：但依赖 isLoggedIn（基于同一套 session）
+// 绑定/解绑/合并：依赖 isLoggedIn（基于同一套 session）
 router.post('/link-account', isLoggedIn, async (req, res) => {
   const { provider, id } = req.body;
   if (!provider || !id) return res.status(400).send({ error: 'Invalid provider or id' });
