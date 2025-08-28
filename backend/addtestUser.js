@@ -1,9 +1,13 @@
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') }); // 从 backend/.env 读取
+
+
 const mongoose = require('mongoose');
 const { User } = require('./models/User');
 const md5 = require('md5');
 
 // MongoDB connection
-const mongoURI = 'mongodb+srv://jd187:hw6djs187@hw6.abcdp.mongodb.net/?retryWrites=true&w=majority&appName=HW6';
+const mongoURI = process.env.MONGO_URI || process.env.MONGODB_URI;
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
