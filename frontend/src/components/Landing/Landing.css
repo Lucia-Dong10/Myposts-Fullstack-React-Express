@@ -1,0 +1,135 @@
+/* Background and overall layout of the landing page */
+.landing-page {
+  background: linear-gradient(135deg, #6A11CB, #2575FC); /* Background gradient */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  color: white;
+  padding: 0 20px; /* Add padding on the sides */
+}
+
+/* Header section: vertical text positioned on the left side */
+.landing-header {
+  writing-mode: vertical-rl; /* Make text vertical */
+  transform: rotate(180deg); /* Rotate text from bottom to top */
+  text-align: center;
+  margin-right: 70px; /* Space between header and form */
+}
+
+.landing-header h1 {
+  font-size: 100px;
+  font-weight: bold;
+  margin: 0; /* Remove margin */
+}
+
+.landing-header p {
+  font-size: 16px;
+  margin: 10px 0 0 0; /* Margin above the paragraph */
+}
+
+/* Form container: flexbox layout to arrange registration and login forms side by side */
+.form-wrapper {
+  display: flex;
+  justify-content: space-between; /* Ensure equal spacing between the forms */
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Maximum width of the form container */
+  gap: 40px; /* Space between the forms */
+}
+
+/* Styling for registration and login form containers */
+.register-container, .login-container {
+  background-color: white; /* Form background color */
+  color: black; /* Text color */
+  padding: 20px; /* Padding inside the form containers */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Drop shadow for the form containers */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+  box-sizing: border-box; /* Ensure padding doesn't increase the container width */
+  flex: 1; /* Allow both containers to grow equally */
+}
+
+/* Login form has a smaller width */
+.login-container {
+  width: 100%; /* Full width of the container */
+}
+
+/* Registration form has a larger width */
+.register-container {
+  width: 100%; /* Full width of the container */
+}
+
+/* Hover effect: slight upward shift on hover */
+.register-container:hover, .login-container:hover {
+  transform: translateY(-10px); /* Move form 10px upwards */
+}
+
+label {
+  display: block; /* Each label takes a full line */
+  margin-bottom: 8px; /* Space between label and input */
+  font-weight: bold; /* Bold text for labels */
+}
+
+input {
+  width: 100%; /* Full width of input fields */
+  padding: 10px; /* Padding inside input fields */
+  margin-bottom: 15px; /* Space below each input field */
+  border: 1px solid #ddd; /* Light border around inputs */
+  border-radius: 5px; /* Rounded corners for inputs */
+  font-size: 14px; /* Font size for input text */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Styling for buttons */
+button {
+  width: 100%; /* Full width buttons */
+  padding: 12px; /* Padding inside buttons */
+  font-size: 16px; /* Font size for button text */
+  border: none; /* Remove borders */
+  border-radius: 5px; /* Rounded corners for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Submit button styling */
+button[type="submit"] {
+  background-color: #6A11CB; /* Background color for submit button */
+  color: white; /* Text color */
+}
+
+/* Submit button hover effect */
+button[type="submit"]:hover {
+  background-color: #4A00E0; /* Darker color on hover */
+}
+
+/* Reset button styling */
+button[type="button"] {
+  background-color: #007bff; /* Blue background for reset button */
+  color: white; /* White text color */
+  margin-top: 10px; /* Add space above the reset button */
+}
+
+/* Reset button hover effect */
+button[type="button"]:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Align form elements */
+form {
+  display: flex;
+  flex-direction: column; /* Stack form elements vertically */
+  width: 100%; /* Full width of the form */
+  max-width: 100%; /* Prevent overflow */
+}
+
+input {
+  width: 100%; /* Ensure input fields take full width */
+  box-sizing: border-box; /* Include padding and border in width calculation */
+}
+
+/* Styling for error messages */
+.error-message {
+  color: red; /* Red text for error messages */
+  font-size: 14px; /* Font size for error messages */
+  margin-top: 10px; /* Space above error messages */
+}

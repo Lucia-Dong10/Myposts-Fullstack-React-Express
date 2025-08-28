@@ -1,0 +1,206 @@
+.main-page {
+  display: flex;
+  background: linear-gradient(135deg, #6A11CB, #2575FC); /* Gradient background */
+  font-family: 'Arial', sans-serif; /* Ensures consistent font */
+  color: #333; /* Sets the text color */
+  min-height: 100vh; /* Ensures the background covers the full height of the viewport */
+  padding: 20px 20px; /* Adds consistent padding around the page */
+  box-sizing: border-box; /* Ensures padding and borders are included in width and height calculations */
+}
+
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  background-color: white; /* White background for the sidebar */
+  border-right: 1px solid #ccc; /* Border separating the sidebar from the content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect for depth */
+  border-radius: 10px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between; /* Ensures equal spacing between buttons */
+  margin-bottom: 20px;
+}
+
+.nav-buttons button {
+  flex: 1; /* Buttons take equal width */
+  margin: 0 10px; /* Space between buttons */
+  padding: 10px 15px; /* Larger padding for easier clickability */
+  background-color: #6A11CB; /* Button background color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.nav-buttons button:hover {
+  background-color: #4A00E0; /* Darker background on hover */
+}
+
+.profile-section {
+  text-align: center; /* Center-align the text in the profile section */
+  margin-bottom: 20px; /* Space under the profile section */
+}
+
+.profile-image {
+  width: 120px; /* Fixed size for the profile image */
+  height: 120px;
+  border-radius: 50%; /* Circular profile image */
+  border: 3px solid #6A11CB; /* Adds a border around the profile image */
+  margin-bottom: 15px; /* Space below the image */
+}
+
+.following-section {
+  margin-top: 20px;
+}
+
+.following-section h4 {
+  font-size: 18px; /* Font size for the heading */
+  text-align: center; /* Center-align the heading */
+  margin-bottom: 15px; /* Space below the heading */
+  color: #6A11CB; /* Consistent color for headings */
+}
+
+.following-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff; /* White background for the user card */
+  border: 1px solid #ddd; /* Light border around the card */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Light shadow for a raised effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.following-user:hover {
+  transform: translateY(-10px); /* Move card upward on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+}
+
+.following-user-image {
+  width: 80px; /* Fixed size for user images */
+  height: 80px;
+  border-radius: 50%; /* Circular user image */
+  margin-bottom: 10px;
+  border: 2px solid #6A11CB; /* Border around user images */
+}
+
+.following-user-details {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.following-name {
+  font-size: 16px; /* Larger text for the user’s name */
+  font-weight: bold;
+  color: #333; /* Dark text color */
+  margin-bottom: 3px;
+}
+
+.following-status {
+  font-size: 12px; /* Smaller font size for user status */
+  color: #888; /* Gray color for status */
+}
+
+.unfollow-btn {
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 12px;
+  width: 90px;
+  text-align: center;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.unfollow-btn:hover {
+  background-color: #e0e0e0; /* Darker background on hover */
+}
+
+.add-user-section {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center; /* Center-align input and button */
+  align-items: center;
+  gap: 10px; /* Space between input and button */
+}
+
+.add-user-input {
+  padding: 8px;
+  width: 90%; /* Large input width */
+  border: 1px solid #ddd; /* Border around input */
+  border-radius: 5px;
+}
+
+.add-user-btn {
+  padding: 8px 12px;
+  background-color: #6A11CB;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  width: auto;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.add-user-btn:hover {
+  background-color: #4A00E0; /* Darker color on hover */
+}
+
+.preview-image {
+  width: 200px; /* Fixed width for preview images */
+  margin-top: 10px;
+}
+
+/* Styling for error messages */
+.error-message {
+  color: red; /* Red text for error messages */
+  font-size: 14px; /* Font size for error messages */
+  margin-top: 10px; /* Space above error messages */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pagination span {
+  font-size: 16px;
+}
+
+.pagination-button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.pagination-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination-info {
+    font-size: 14px;
+    font-weight: bold;
+}

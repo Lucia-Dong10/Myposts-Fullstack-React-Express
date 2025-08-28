@@ -1,0 +1,19 @@
+# Node & logs
+node_modules/
+npm-debug.log*
+yarn-error.log
+*.log
+
+# Build outputs
+frontend/build/
+backend/uploads/
+coverage/
+
+# Secrets
+.env
+backend/.env
+frontend/.env
+
+# IDE / OS
+.vscode/
+.DS_Store

@@ -1,0 +1,133 @@
+/* Profile page layout with centered content and a background gradient */
+.profile-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #6A11CB, #2575FC); /* Background gradient */
+  min-height: 100vh; /* Ensures full page height coverage */
+  box-sizing: border-box; /* Includes padding and borders in width/height calculations */
+}
+
+/* Container for profile information and update form */
+.profile-container {
+  display: flex;
+  justify-content: space-between; /* Evenly spaces info and update sections */
+  background-color: white;
+  border-radius: 10px; /* Rounded corners for the container */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  padding: 20px;
+  width: 70%; /* Adjusted width for medium-large screens */
+  max-width: 1000px; /* Limits maximum width */
+  margin-top: 20px; /* Adds space at the top */
+}
+
+/* Profile info and update form share similar layouts */
+.profile-info, .profile-update {
+  flex: 1; /* Each section takes up equal space */
+  padding: 20px;
+}
+
+/* Center-align headings and adjust spacing */
+.profile-info h3, .profile-update h3 {
+  text-align: center; /* Center the title */
+  font-size: 1.5em; /* Adjusts the size of the title */
+  margin-bottom: 20px; /* Adds space below the title */
+  font-weight: bold; /* Makes the title bold */
+}
+
+/* Layout for profile information section */
+.profile-info {
+  border-right: 1px solid #ccc; /* Divider between sections */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content horizontally */
+  justify-content: flex-start; /* Aligns content to the top */
+}
+
+/* Styling for the profile picture */
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Circular image */
+  object-fit: cover; /* Ensures the image fits within the circle */
+  margin-bottom: 20px; /* Adds space below the image */
+}
+
+/* Upload button styling */
+.upload-btn {
+  margin-bottom: 20px;
+  background-color: #6A11CB;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 18px 16px; /* Adjusted padding for consistency */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Upload button hover effect */
+.upload-btn:hover {
+  background-color: #5C0EBE; /* Darker shade on hover */
+}
+
+/* Styling for each field in the profile info section */
+.info-field {
+  margin-bottom: 15px; /* Reduces space between fields for compact layout */
+  text-align: left;
+  width: 100%; /* Ensures fields take up full width */
+}
+
+/* Label styling for the profile fields */
+.info-field label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px; /* Adds space below the label */
+}
+
+/* Container for the back button with centered alignment */
+.back-link {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 30px; /* Adds space above the back button */
+}
+
+/* Back button styling */
+.back-btn {
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  padding: 10px 20px; /* Adjusted padding for better click area */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Back button hover effect */
+.back-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Layout for the update buttons */
+.update-buttons {
+  display: flex;
+  justify-content: space-between; /* Spaces buttons evenly */
+  margin-top: 20px;
+  gap: 20px; /* Adds space between the buttons */
+}
+
+/* Styling for the update buttons */
+.update-buttons button {
+  padding: 12px 24px; /* Ensures consistent button size */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1; /* Ensures buttons are of equal width */
+  background-color: #007bff; /* Primary button color */
+  color: white;
+}
+
+/* Hover effect for update buttons */
+.update-buttons button:hover {
+  opacity: 0.9;
+  background-color: #0056b3; /* Darker blue on hover */
+}
